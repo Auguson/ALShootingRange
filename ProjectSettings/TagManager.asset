@@ -11,6 +11,10 @@ TagManager:
   - enemy
   - boos
   - canvas
+  - jumppad
+  - revolver
+  - aka
+  - pistol
   layers:
   - Default
   - TransparentFX

@@ -8,9 +8,10 @@ public class Shooting : MonoBehaviour
     public float bulletSpeed = 50f;
     public GameObject bulletPrefab;
     public GameObject FirePre;
-    public GameObject killEffectPrefab; // <-- Added this
+    public GameObject killEffectPrefab; 
     public int TargetsNotDestroyed;
     public bool rayCastShooting = false;
+    public bool isWaveWaveTwo = false;
     public int DeadButAliveTargets;
 
     void Update()
@@ -34,13 +35,25 @@ public class Shooting : MonoBehaviour
         if (DeadButAliveTargets <= 0)
         {
             Debug.Log("Wave2");
-            SceneManager.LoadScene(11);
+            SceneManager.LoadScene(8);
+            isWaveWaveTwo = true;
+        }  if (DeadButAliveTargets <= 0 && isWaveWaveTwo)
+        {
+            Debug.Log("Wave2");
+            SceneManager.LoadScene(9);
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1)
         {
             Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene(3);
-        }   
+      SceneManager.LoadScene(6, LoadSceneMode.Additive);
+      Time.timeScale = 0;
+        }  
+        else if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 0) {
+             Time.timeScale = 1;
+             SceneManager.UnloadScene(6);
+            Cursor.lockState = CursorLockMode.Locked;
+
+        }
     }
 
     void Shoot()
@@ -75,7 +88,8 @@ public class Shooting : MonoBehaviour
             if (hit.transform.CompareTag("target"))
             {
                 PlayKillEffect(hit.transform.position); // <-- Added effect
-                Destroy(hit.transform.gameObject);
+                hit.transform.gameObject.SetActive(false);
+                StartCoroutine(ResetTarget(hit.transform.gameObject, 5f));
                 TargetsNotDestroyed--;
             }
             // Handle Enemy
@@ -108,5 +122,10 @@ public class Shooting : MonoBehaviour
             GameObject effect = Instantiate(killEffectPrefab, position, Quaternion.identity);
             Destroy(effect, 2f); // Clean up after 2 seconds
         }
+    }
+
+    private IEnumerator ResetTarget(GameObject target, float delay) {
+        yield return new WaitForSeconds(delay);
+        target.SetActive(true);
     }
 }

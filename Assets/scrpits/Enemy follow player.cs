@@ -22,8 +22,8 @@ public class Enemyfollowplayer : MonoBehaviour
 
             Vector3 dir = (player.position - transform.position);
             dir.y = 0;
-            rb.AddForce(dir.normalized * 10f);
-            rb.velocity = Vector3.ClampMagnitude(rb.velocity, 5f);
+            rb.AddForce(dir.normalized * 20f);
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, 3f);
         
             transform.LookAt(player);
         }

@@ -6,7 +6,13 @@ using UnityEngine.SceneManagement;
 public class selectedmenu : MonoBehaviour
 {
 
-  
+    public void OnResumePressed ()
+    {
+       SceneManager.UnloadSceneAsync("PauseScene");
+            Cursor.lockState = CursorLockMode.Locked;
+
+
+    }
 
     public void OnStartPressed ()
     {
@@ -14,60 +20,60 @@ public class selectedmenu : MonoBehaviour
     }
     public void OnStartLevel1Pressed ()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(10);
     }
     public void OnStartLevel2Pressed ()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(10);
     }
     public void OnStartLevel3Pressed ()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(10);
     }
 
     
     public void OnStart1Pressed ()
     {
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene(10);
 
     }
     public void OnStart2Pressed ()
     {
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene(11);
     }
     public void OnGameModeTriggeredPressed ()
     {
-        SceneManager.LoadScene(10);
+        SceneManager.LoadScene(4);
     }
     public void OnStart3Pressed ()
     {
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene(12);
     }
     public void OnWavesPressed ()
     {
-        SceneManager.LoadScene(12);
+        SceneManager.LoadScene(7);
     }
 
    
     public void OnLevel1Pressed ()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(10);
 
     }
     public void OnLevel2Pressed()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(11);
     }
     public void OnLevel3Pressed()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(12);
     }
 
    
 
     public void OnCreditsPressed()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
     public void OnBackPressed()
     {
@@ -75,29 +81,33 @@ public class selectedmenu : MonoBehaviour
     }
     public void OnPausePressed()
     {
-        SceneManager.LoadScene(3);
+        Debug.Log("Pause");
+        SceneManager.LoadScene(3, LoadSceneMode.Additive);
     }
     public void OnResetPressed()
     {
-        SceneManager.LoadScene("ShootingRange");
+        SceneManager.LoadScene(1);
+
+    }public void OnAKAPressed()
+    {
+        SceneManager.LoadScene(10);
+
+    }public void OnRevolverPressed()
+    {
+        SceneManager.LoadScene(10);
+
+    }public void OnPistolPressed()
+    {
+        SceneManager.LoadScene(10);
 
     }
     public void OnHTPPressed()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(2);
 
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
+    
 
    
       
