@@ -6,20 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class enemyAttack : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool canAttack = true;
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionStay(Collision collision)
     {
-        
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
+        if(!canAttack) return;
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Enemy has attacked the player!");
@@ -27,21 +18,15 @@ public class enemyAttack : MonoBehaviour
             if(collision.gameObject.GetComponent<health>() != null)
             {
 
-                collision.gameObject.GetComponent<health>().currentHealth -= 5;
+                collision.gameObject.GetComponent<health>().TakeDamage(5);
+                canAttack = false;
+                StartCoroutine(AttackCD());
             }
-
-            if (collision.gameObject.GetComponent<health>().currentHealth <= 0)
-            {
-
-                SceneManager.LoadScene(13);
-                Cursor.lockState = CursorLockMode.None;
-
-            }
-
-
-
-            else
-                Debug.Log("No health component found on " + collision.gameObject.name);
-        }
     }
+
+    IEnumerator AttackCD() {
+        yield return new WaitForSeconds(1.5f);
+        canAttack = true;
+    }
+}
 }

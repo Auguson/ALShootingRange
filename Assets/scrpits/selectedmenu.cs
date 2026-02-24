@@ -5,16 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class selectedmenu : MonoBehaviour
 {
+    public GunSeleceter selector;
 
     public void OnResumePressed ()
     {
-       SceneManager.UnloadSceneAsync("PauseScene");
-            Cursor.lockState = CursorLockMode.Locked;
-
-
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
+        SceneManager.UnloadSceneAsync("PauseScene");
     }
 
     public void OnStartPressed ()
+    {
+        SceneManager.LoadScene(4);
+    }public void OnLevelSelect ()
     {
         SceneManager.LoadScene(5);
     }
@@ -37,18 +40,23 @@ public class selectedmenu : MonoBehaviour
         SceneManager.LoadScene(10);
 
     }
+    
     public void OnStart2Pressed ()
     {
         SceneManager.LoadScene(11);
     }
+    
     public void OnGameModeTriggeredPressed ()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(4);
     }
+   
     public void OnStart3Pressed ()
     {
         SceneManager.LoadScene(12);
     }
+    
     public void OnWavesPressed ()
     {
         SceneManager.LoadScene(7);
@@ -60,10 +68,12 @@ public class selectedmenu : MonoBehaviour
         SceneManager.LoadScene(10);
 
     }
+   
     public void OnLevel2Pressed()
     {
         SceneManager.LoadScene(11);
     }
+   
     public void OnLevel3Pressed()
     {
         SceneManager.LoadScene(12);
@@ -75,35 +85,61 @@ public class selectedmenu : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+    
     public void OnBackPressed()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
+   
     public void OnPausePressed()
     {
         Debug.Log("Pause");
         SceneManager.LoadScene(3, LoadSceneMode.Additive);
     }
+   
     public void OnResetPressed()
     {
         SceneManager.LoadScene(1);
 
-    }public void OnAKAPressed()
+    }
+    
+    public void OnAKAPressed()
     {
         SceneManager.LoadScene(10);
+        selector.SetIndex(0);
 
-    }public void OnRevolverPressed()
-    {
-        SceneManager.LoadScene(10);
 
-    }public void OnPistolPressed()
+    }
+    
+    public void OnRevolverPressed()
     {
         SceneManager.LoadScene(10);
+    
+        selector.SetIndex(2);
+
+
+
+    }
+    
+    public void OnPistolPressed()
+    {
+        SceneManager.LoadScene(10);
+         
+        selector.SetIndex(1);
+
+        
 
     }
     public void OnHTPPressed()
     {
         SceneManager.LoadScene(2);
+
+    }
+    
+      public void LoadShootingRange()
+    {
+        SceneManager.LoadScene(10);
 
     }
     

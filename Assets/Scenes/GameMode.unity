@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 47321371}
         m_TargetAssemblyTypeName: selectedmenu, Assembly-CSharp
-        m_MethodName: OnStartPressed
+        m_MethodName: OnLevelSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -268,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf1abab64ed8804e8a582d2fe6e61b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selector: {fileID: 0}
 --- !u!1 &217986680
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,6 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf1abab64ed8804e8a582d2fe6e61b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selector: {fileID: 0}
 --- !u!1 &510033104
 GameObject:
   m_ObjectHideFlags: 0

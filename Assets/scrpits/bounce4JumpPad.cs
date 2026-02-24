@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class bounce4JumpPad : MonoBehaviour
-{  
+    
+  {  
+    
+    public AudioSource Jump; 
+ 
    
     public float jumpPower = 5f; 
 
@@ -11,6 +15,7 @@ public class bounce4JumpPad : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player")){
             collision.gameObject.GetComponent<Rigidbody>().AddForce(1f, jumpPower, 1f, ForceMode.Impulse);
+            Jump.Play();
             
         }
     }
