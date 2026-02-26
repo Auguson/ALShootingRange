@@ -16531,7 +16531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 356853544534899652, guid: 33112143339d3d442be0d9e4e2e32055, type: 3}
       propertyPath: DeadButAliveTargets
-      value: 42
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 356853544534899652, guid: 33112143339d3d442be0d9e4e2e32055, type: 3}
       propertyPath: animators.Array.size
