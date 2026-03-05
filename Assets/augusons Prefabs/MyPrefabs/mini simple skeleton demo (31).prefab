@@ -479,6 +479,7 @@ MonoBehaviour:
   healthHP: 10
   healthBar: {fileID: 8527805442151701546}
   killEffectPrefab: {fileID: 3386556974147004097, guid: c161c1e4ed9b0b04aac30f3b6221e02c, type: 3}
+  isPlayer: 0
 --- !u!1 &2242011896549798379
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,8 +867,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 197d828545e10154683f70f768498394, type: 2}
+  m_sharedMaterial: {fileID: 920284804779353753, guid: 197d828545e10154683f70f768498394, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -891,7 +892,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.75
+  m_fontSize: 2.15
   m_fontSizeBase: 1
   m_fontWeight: 400
   m_enableAutoSizing: 1

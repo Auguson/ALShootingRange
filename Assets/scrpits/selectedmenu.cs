@@ -13,79 +13,13 @@ public class selectedmenu : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.UnloadSceneAsync("PauseScene");
     }
-
-    public void OnStartPressed ()
-    {
-        SceneManager.LoadScene(4);
-    }public void OnLevelSelect ()
-    {
-        SceneManager.LoadScene(5);
-    }
-    public void OnStartLevel1Pressed ()
-    {
-        SceneManager.LoadScene(10);
-    }
-    public void OnStartLevel2Pressed ()
-    {
-        SceneManager.LoadScene(10);
-    }
-    public void OnStartLevel3Pressed ()
-    {
-        SceneManager.LoadScene(10);
-    }
-
-    
-    public void OnStart1Pressed ()
-    {
-        SceneManager.LoadScene(10);
-
-    }
-    
-    public void OnStart2Pressed ()
-    {
-        SceneManager.LoadScene(11);
-    }
     
     public void OnGameModeTriggeredPressed ()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(4);
     }
-   
-    public void OnStart3Pressed ()
-    {
-        SceneManager.LoadScene(12);
-    }
-    
-    public void OnWavesPressed ()
-    {
-        SceneManager.LoadScene(7);
-    }
 
-   
-    public void OnLevel1Pressed ()
-    {
-        SceneManager.LoadScene(10);
-
-    }
-   
-    public void OnLevel2Pressed()
-    {
-        SceneManager.LoadScene(11);
-    }
-   
-    public void OnLevel3Pressed()
-    {
-        SceneManager.LoadScene(12);
-    }
-
-   
-
-    public void OnCreditsPressed()
-    {
-        SceneManager.LoadScene(3);
-    }
-    
     public void OnBackPressed()
     {
         Time.timeScale = 1;
@@ -96,12 +30,6 @@ public class selectedmenu : MonoBehaviour
     {
         Debug.Log("Pause");
         SceneManager.LoadScene(3, LoadSceneMode.Additive);
-    }
-   
-    public void OnResetPressed()
-    {
-        SceneManager.LoadScene(1);
-
     }
     
     public void OnAKAPressed()
@@ -127,22 +55,12 @@ public class selectedmenu : MonoBehaviour
         SceneManager.LoadScene(10);
          
         selector.SetIndex(1);
-
-        
-
-    }
-    public void OnHTPPressed()
-    {
-        SceneManager.LoadScene(2);
-
     }
     
-      public void LoadShootingRange()
+    public void LoadSceneByIndex(int index) 
     {
-        SceneManager.LoadScene(10);
-
+        SceneManager.LoadScene(index);
     }
-    
     
 
    
