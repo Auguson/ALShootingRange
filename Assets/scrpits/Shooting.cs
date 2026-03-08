@@ -94,18 +94,18 @@ public class Shooting : MonoBehaviour
         if (DeadButAliveTargets <= 0 && isWaveThree)
         {
             Debug.Log("u win");
-            SceneManager.LoadScene(13);
+            SceneManager.LoadScene(12);
             Cursor.lockState = CursorLockMode.None;
 
         }
         
-        if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1)
+        if (Input.GetKeyDown(KeyCode.P) && Time.timeScale == 1)
         {
             Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene(6, LoadSceneMode.Additive);
             Time.timeScale = 0;
         }  
-        else if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 0) {
+        else if (Input.GetKeyDown(KeyCode.P) && Time.timeScale == 0) {
              Time.timeScale = 1;
              SceneManager.UnloadScene(6);
             Cursor.lockState = CursorLockMode.Locked;
