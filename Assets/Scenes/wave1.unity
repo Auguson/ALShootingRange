@@ -607,6 +607,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1080272668}
     m_Modifications:
     - target: {fileID: 356853544534899652, guid: 33112143339d3d442be0d9e4e2e32055, type: 3}
+      propertyPath: waveTimer
+      value: 
+      objectReference: {fileID: 796090466}
+    - target: {fileID: 356853544534899652, guid: 33112143339d3d442be0d9e4e2e32055, type: 3}
       propertyPath: gunSelector
       value: 
       objectReference: {fileID: 11400000, guid: ce9bb2b9ce774e449bdaba454820ed3d, type: 2}
@@ -762,6 +766,10 @@ PrefabInstance:
       propertyPath: TargetsNotDestroyed
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 6971573633238275306, guid: 33112143339d3d442be0d9e4e2e32055, type: 3}
+      propertyPath: sprintBarWidthPercent
+      value: 0.14
+      objectReference: {fileID: 0}
     - target: {fileID: 7555517685181980259, guid: 33112143339d3d442be0d9e4e2e32055, type: 3}
       propertyPath: m_Color.b
       value: 0.75357676
@@ -780,6 +788,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7737777981001756158, guid: 33112143339d3d442be0d9e4e2e32055, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7793113752274987923, guid: 33112143339d3d442be0d9e4e2e32055, type: 3}
+      propertyPath: m_Volume
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8968756892567328213, guid: 33112143339d3d442be0d9e4e2e32055, type: 3}
@@ -3339,7 +3351,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'health : 100'
+  m_text: Health:100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 197d828545e10154683f70f768498394, type: 2}
   m_sharedMaterial: {fileID: 920284804779353753, guid: 197d828545e10154683f70f768498394, type: 2}
@@ -3366,10 +3378,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39
-  m_fontSizeBase: 29
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -4879,7 +4891,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132303209}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4888,7 +4900,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 35, y: -59.4}
+  m_AnchoredPosition: {x: 85, y: -64}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2138859969 stripped

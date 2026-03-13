@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class selectedmenu : MonoBehaviour
 {
     public GunSeleceter selector;
+
+    public TMP_Text highscoreText;
+
+    public void Start() {
+        if(highscoreText) {
+            highscoreText.text = PlayerPrefs.GetFloat("highscore").ToString();
+        }
+    }
 
     public void OnResumePressed ()
     {
@@ -61,6 +70,7 @@ public class selectedmenu : MonoBehaviour
     {
         SceneManager.LoadScene(index);
     }
+    
     
 
    

@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Shooting : MonoBehaviour
-{
+{   
+
     public float bulletSpeed = 50f;
     public GameObject bulletPrefab;
     public GameObject FirePre;
@@ -26,6 +27,8 @@ public class Shooting : MonoBehaviour
     public GunSeleceter gun;
 
     public GameObject[] guns;
+
+    public timer waveTimer;
 
 
     public float shootCoolDown;
@@ -79,22 +82,22 @@ public class Shooting : MonoBehaviour
             SceneManager.LoadScene(8);
         }
 
-        if (DeadButAliveTargets <= 0 && isWaveWaveOne)
-        {
-            Debug.Log("Wave2");
-            SceneManager.LoadScene(8);
-        }  
-        
-        if (DeadButAliveTargets <= 0 && isWaveWaveTwo)
-        {
-            Debug.Log("wave3");
-            SceneManager.LoadScene(9);
-        }
-        
         if (DeadButAliveTargets <= 0 && isWaveThree)
         {
-            Debug.Log("u win");
+            waveTimer.SaveTime(3);
             SceneManager.LoadScene(12);
+            Cursor.lockState = CursorLockMode.None;
+
+        }  if (DeadButAliveTargets <= 0 && isWaveWaveTwo)
+        {
+            waveTimer.SaveTime(2);
+            SceneManager.LoadScene(9);
+            Cursor.lockState = CursorLockMode.None;
+
+        }  if (DeadButAliveTargets <= 0 && isWaveWaveOne)
+        {
+            waveTimer.SaveTime(1);
+            SceneManager.LoadScene(8);
             Cursor.lockState = CursorLockMode.None;
 
         }
@@ -111,6 +114,16 @@ public class Shooting : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
 
         }
+    }
+
+    public void SetFloat(string KeyName, float Value)
+    {
+        PlayerPrefs.SetFloat(KeyName, Value);
+    }
+
+    public float GetFloat(string KeyName)
+    {
+        return PlayerPrefs.GetFloat(KeyName);
     }
 
     void Shoot()

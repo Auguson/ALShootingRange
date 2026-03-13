@@ -54,9 +54,17 @@ public class timer : MonoBehaviour
     private void SetTimerText() 
     {
        timerText.text = hasFormat ? currentTime.ToString(timeFormats[format]) : currentTime.ToString();
-        
-
     }
 
- 
+    public void SaveTime(int wave) {
+        string key = "WaveBest_" + wave;
+
+        PlayerPrefs.SetFloat(key, GetBestTime(key, wave));
+    }
+
+    private float GetBestTime(string key, float currentWaveTime) {
+        float lastBest = PlayerPrefs.GetFloat(key, float.MaxValue);
+        return currentTime < lastBest ? currentTime : lastBest; 
+    }
+
 }
